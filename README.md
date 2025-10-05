@@ -24,7 +24,17 @@ O objetivo desta avaliação era desenvolver uma aplicação que consumisse uma 
 - Texto introdutório para o usuário
 - Navegação via tabs para outras seções
 
-### Tela 2 (Pokédex)
+![Tela de Apresentação](src/assets/readme/telainicial.png)
+
+
+### Tela 2 (Identificação)
+- Informações do desenvolvedor
+- Dados de contato e perfil
+- Layout clean e profissional
+
+![Tela de Identificação](src/assets/readme/telaperfil.png)
+
+### Tela 3 (Pokédex)
 - Interface inspirada na Pokédex clássica
 - Busca de Pokémon por nome ou número
 - Exibição de sprites animados (quando disponíveis)
@@ -33,10 +43,15 @@ O objetivo desta avaliação era desenvolver uma aplicação que consumisse uma 
 - Alerta personalizado com mensagens contextuais
 - Imagem de interrogação para buscas sem resultado
 
-### Tela 3 (Identificação)
-- Informações do desenvolvedor
-- Dados de contato e perfil
-- Layout clean e profissional
+## Pokedex:
+
+![Tela de Pokédex](src/assets/readme/telaapipokedex.png)
+
+## Tela de erro (quando busca pokemon que não existe):
+
+![Tela de Erro](src/assets/readme/telaerro.png)
+
+
 
 ### Navegação
 - Sistema de tabs do Ionic
