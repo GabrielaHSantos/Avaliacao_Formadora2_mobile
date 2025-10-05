@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Oxanium', cursive;
+}
+
+ion-content {
+  --background: linear-gradient(180deg, #87CEEB 0%, #cfefff 100%);
+  position: relative; /* necessário para nuvens absolutas */
+  overflow: hidden;   /* esconde nuvens que saem da tela */
+  min-height: 100%;
+  pointer-events: auto;
+}
+
+/* nuvens animadas */
+.cloud {
+  position: absolute;
+  background: #ffffff;
+  width: 140px;
+  height: 60px;
+  border-radius: 50px;
+  box-shadow:
+    30px 5px 0 0 #ffffff,
+    -30px 5px 0 0 #ffffff,
+    10px -15px 0 5px #ffffff,
+    -10px -15px 0 5px #ffffff;
+  opacity: 0.9;
+  animation: drift 40s linear infinite;
+  z-index: 0; /* atrás do conteúdo */
+  pointer-events: none; /* nuvens não bloqueiam cliques */
+}
+.cloud-1 { top: 12%; left: -160px; animation-duration: 50s; pointer-events: none; }
+.cloud-2 { top: 28%; left: -220px; animation-duration: 60s; pointer-events: none; }
+.cloud-3 { top: 48%; left: -180px; animation-duration: 55s; pointer-events: none; }
+.cloud-4 { top: 68%; left: -260px; animation-duration: 65s; pointer-events: none; }
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(130%); }
+}
+
+/* ---- Layout original restaurado ---- */
+main {
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+  margin: 0 auto; /* centraliza dentro do container */
+}
+
+.pokedex {
+  width: 100%;
+  max-width: 425px;
+  pointer-events: none; /* imagem de fundo não intercepta cliques */
+}
+
+.pokemon__image {
+  position: absolute;
+  bottom: 55%;
+  left: 50%;
+  transform: translate(-63%, 20%);
+  height: 18%;
+  pointer-events: none; /* imagem não intercepta cliques */
+}
+
+.pokemon__data {
+  position: absolute;
+  font-weight: 600;
+  color: #aaa;
+  top: 54.5%;
+  right: 27%;
+  font-size: clamp(8px, 5vw, 25px);
+  z-index: 2;
+  pointer-events: none; /* título não bloqueia cliques */
+  user-select: none;
+}
+
+.pokemon__name {
+  color: #3a444d;
+  text-transform: capitalize;
+}
+
+.form {
+  position: absolute;
+  width: 65%;
+  top: 65%;
+  left: 13.5%;
+  z-index: 99999; /* acima de elementos decorativos e overlays */
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+.input__search {
+  width: 100%;
+  padding: 4%;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 1rem);
+  background: #ffffff; /* caixa branquinha */
+  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
+  touch-action: manipulation;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 65%;
+  transform: translate(-57%, 0);
+  display: flex;
+  gap: 20px;
+  z-index: 99999; /* garantir clique nos botões em qualquer contexto */
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+/* Header tweaks */
+.title-center {
+  text-align: center;
+  width: 100%;
+}
+
+ion-header ion-toolbar {
+  --background: var(--ion-color-danger);
+  z-index: 10;
+}
+
+ion-content, .cloud { z-index: 0; }
+.pokedex-container { z-index: 2000; }
+.form, .buttons { z-index: 99999; }
+
+ion-header ion-toolbar ion-back-button,
+ion-header ion-toolbar ion-button[fill="clear"] ion-icon,
+.back-icon {
+  --background: transparent;
+  color: #fff; /* seta branca */
+}
+
+/* container centralizador para garantir centralização absoluta */
+.pokedex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative; /* sobre as nuvens */
+  z-index: 2000; /* elevar container acima de qualquer overlay */
+  transform: translateZ(0); /* cria contexto de empilhamento no iOS */
+}
+
+.pokedex-button {
+  width: 50%;
+  padding: 4%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  font-weight: 600;
+  color: #fff;
+  background: #bdbdbd; /* cinza padrão */
+  box-shadow: -2px 3px 0 #8a8a8a, -4px 6px 0 #4d4d4d; /* sombras em cinza escuro */
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.pokedex-button:active {
+  box-shadow: inset -4px 4px 0 rgba(0,0,0,.35);
+  font-size: 0.9rem;
+}
+
+/* variantes em cinza para ambos */
+.btn-prev { background: #bdbdbd; box-shadow: -2px 3px 0 #8a8a8a, -4px 6px 0 #4d4d4d; }
+.btn-next { background: #bdbdbd; box-shadow: -2px 3px 0 #8a8a8a, -4px 6px 0 #4d4d4d; }
+
+/* Existing avatar and chips styling */
+ion-avatar {
+  width: 60px;
+  height: 60px;
+}
+ion-chip {
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+ion-chip[color="grass"] { background: #78c850; }
+ion-chip[color="fire"] { background: #f08030; }
+ion-chip[color="water"] { background: #6890f0; }
+ion-chip[color="bug"] { background: #a8b820; }
+ion-chip[color="normal"] { background: #a8a878; }
+ion-chip[color="poison"] { background: #a040a0; }
+ion-chip[color="electric"] { background: #f8d030; }
+ion-chip[color="ground"] { background: #e0c068; }
+ion-chip[color="fairy"] { background: #ee99ac; }
+ion-chip[color="fighting"] { background: #c03028; }
+ion-chip[color="psychic"] { background: #f85888; }
+ion-chip[color="rock"] { background: #b8a038; }
+ion-chip[color="ghost"] { background: #705898; }
+ion-chip[color="ice"] { background: #98d8d8; }
+ion-chip[color="dragon"] { background: #7038f8; }
+ion-chip[color="flying"] { background: #a890f0; }
+
+/* Mensagem inline de não encontrado */
+.not-found-text {
+  position: absolute;
+  top: 54.5%;
+  right: 27%;
+  width: auto;
+  color: #3a444d;
+  font-weight: 600;
+  font-size: clamp(8px, 5vw, 16px);
+  text-align: center;
+}

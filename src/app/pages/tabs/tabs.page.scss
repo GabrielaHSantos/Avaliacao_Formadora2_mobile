@@ -1,0 +1,27 @@
+ion-tab-bar {
+  --background: var(--ion-color-primary); /* usa o rosa principal */
+  --color: #ffffff; /* ícones e textos padrão em branco */
+  --color-selected: #ffffff; /* selecionado também branco para manter padrão */
+  border-top: 2px solid rgba(0,0,0,.05);
+}
+
+/* Garante que o conteúdo da página fique acima do router-outlet e não seja bloqueado */
+ion-tabs, ion-router-outlet {
+  position: relative;
+  z-index: 0;
+}
+
+ion-tab-button ion-icon {
+  font-size: 22px;
+  color: #ffffff; /* garante branco nos ícones baseados em SVG */
+}
+
+ion-tab-button ion-label {
+  color: #ffffff; /* garante branco no texto das tabs */
+}
+
+.tab-image-icon {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1); /* transforma imagens pretas em brancas */
+}

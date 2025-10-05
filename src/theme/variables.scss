@@ -1,0 +1,36 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+:root {
+  /* Pink primary color */
+  --ion-color-primary: #d81b60; /* pink 600 */
+  --ion-color-primary-rgb: 216,27,96;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #bd184f;
+  --ion-color-primary-tint: #de3a76;
+
+  /* Secondary (soft pink) */
+  --ion-color-secondary: #ff8ba7;
+  --ion-color-secondary-rgb: 255,139,167;
+  --ion-color-secondary-contrast: #3a3a3a;
+  --ion-color-secondary-contrast-rgb: 58,58,58;
+  --ion-color-secondary-shade: #e07a93;
+  --ion-color-secondary-tint: #ffa0b6;
+
+  /* Danger redefined to deep pink instead of red */
+  --ion-color-danger: #c2185b;
+  --ion-color-danger-rgb: 194,24,91;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #aa154f;
+  --ion-color-danger-tint: #cb3771;
+
+  /* Medium/tertiary shades */
+  --ion-color-medium: #9c8aa5;
+  --ion-color-medium-rgb: 156,138,165;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255,255,255;
+  --ion-color-medium-shade: #897996;
+  --ion-color-medium-tint: #a79ab0;
+}

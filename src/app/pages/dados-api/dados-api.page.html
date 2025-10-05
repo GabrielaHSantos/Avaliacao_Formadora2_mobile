@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/tabs/apresentacao" mode="ios" class="header-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title-center">Pokédex</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+  <div class="cloud cloud-3"></div>
+  <div class="cloud cloud-4"></div>
+  <div class="ion-text-center ion-padding" *ngIf="listaFiltrada.length === 0">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Carregando Pokémon...</p>
+  </div>
+
+  <!-- Pokédex visual com imagem e controles -->
+  <div class="pokedex-container">
+    <main class="ion-text-center">
+      <img [src]="pokemonImageUrl || ''" alt="pokemon" class="pokemon__image" />
+
+      <h1 class="pokemon__data" *ngIf="pokemonNumber && pokemonName">
+        <span class="pokemon__number">{{ pokemonNumber }}</span> -
+        <span class="pokemon__name">{{ pokemonName }}</span>
+      </h1>
+
+      <form class="form" (submit)="onSubmit($event)">
+        <input
+          type="search"
+          class="input__search"
+          placeholder="Name or Number"
+          [(ngModel)]="searchInput"
+          name="search"
+          (keyup.enter)="onSubmit($event)"
+          required
+        />
+      </form>
+
+      <div class="buttons">
+        <button type="button" class="pokedex-button btn-prev" (click)="prev()" (touchstart)="prev()">Prev &lt;</button>
+        <button type="button" class="pokedex-button btn-next" (click)="next()" (touchstart)="next()">Next &gt;</button>
+      </div>
+
+      <img src="assets/pokedex.png" alt="pokedex" class="pokedex" />
+    </main>
+  </div>
+ 
+  <!-- Alert personalizado para Pokémon não encontrado -->
+  <ion-alert
+    [isOpen]="showNotFoundAlert"
+    header="Pokémon não encontrado"
+    [message]="notFoundMessage"
+    mode="ios"
+    (didDismiss)="onAlertDismiss()"
+    [buttons]="[{ text: 'OK', role: 'cancel' }]"
+  ></ion-alert>
+ 
+ </ion-content>

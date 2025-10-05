@@ -1,0 +1,7 @@
+{
+  "name": "dev-dex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

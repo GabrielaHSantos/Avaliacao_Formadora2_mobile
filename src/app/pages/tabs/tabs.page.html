@@ -1,0 +1,21 @@
+<ion-tabs>
+  <!-- Coloca o conteúdo de rotas na área principal para evitar sobreposição com a tabbar -->
+  <ion-router-outlet></ion-router-outlet>
+
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="apresentacao" [routerLink]="['/tabs/apresentacao']" routerDirection="root">
+      <ion-img src="assets/home.webp" class="tab-image-icon" alt="Início"></ion-img>
+      <ion-label>Início</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="identificacao" [routerLink]="['/tabs/identificacao']">
+      <ion-img src="assets/profile.png" class="tab-image-icon" alt="Perfil"></ion-img>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="dados-api" [routerLink]="['/tabs/dados-api']">
+      <ion-icon src="assets/pokeball.svg"></ion-icon>
+      <ion-label>Pokédex</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
